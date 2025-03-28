@@ -11,11 +11,11 @@ jobs:
   work:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - uses: szenius/set-timezone@v1.0 # 设置执行环境的时区
         with:
           timezoneLinux: "Asia/Shanghai"
-      - uses: actions/setup-python@v1 # 使用python装配器
+      - uses: actions/setup-python@v5 # 使用python装配器
         with:
           python-version: 3.8
           cache: 'pip'
@@ -29,8 +29,8 @@ jobs:
       - name: Commit
         uses: EndBug/add-and-commit@v4
         with:
-          author_name: GITHUB_GENERATOR
-          author_email: 1842074134@qq.com
+          author_name: 
+          author_email: 
           message: "Updata"
           add: "*.txt"
         env:
