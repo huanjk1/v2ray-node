@@ -78,7 +78,7 @@ def GenNodesFile(urls, flag):
     nodes_b64_en = base64.b64encode(modIP(nodes).encode(encoding='UTF-8'))
     nodes_b64_de = nodes_b64_en.decode('UTF-8')
 
-    with open(f'{flag}_nodes_mod.txt', 'w', encoding='UTF-8') as w:
+    with open(f'{flag}_nodes_mod.txt'， 'w', encoding='UTF-8') as w:
         w.write(nodes_b64_de)
 
     with open(f'{flag}_nodes_ori.txt', 'w', encoding='UTF-8') as w:
@@ -98,13 +98,13 @@ def GenNodes4ClashFile(urls, flag):
 
 def GenNods():
 
-    clashnode_url = 'https://clashnode.com/wp-content/uploads/{}/{}/{}.txt'
+    clashnode_url = 'https://nodefree.githubrowcontent.com/{}/{}/{}.yaml'
     clashnode_urls = [clashnode_url.format(y, m, y+m+'%02d'%i) for i in range(int(d), 0, -1)]
 
-    nodefree_url = 'https://nodefree.org/dy/{}/{}/{}.txt'
+    nodefree_url = 'https://v2rayshare.githubrowcontent.com/{}/{}/{}.yaml'
     nodefree_urls = [nodefree_url.format(y, m, y+m+'%02d'%i) for i in range(int(d), 0, -1)]
     
-    # other_urls = ['https://raw.iqiq.io/ermaozi/get_subscribe/main/subscribe/v2ray.txt']
+    other_urls = ['https://raw.githubusercontent.com/ermaozi01/free_clash_vpn/refs/heads/main/subscribe/clash.yml']
 
     GenNodesFile(clashnode_urls, 'clashnode')
     GenNodesFile(nodefree_urls, 'nodefree')
